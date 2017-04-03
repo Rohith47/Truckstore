@@ -1,0 +1,87 @@
+<h3> Manage Parts </h3>
+<uib-accordion>
+	<div uib-accordion-group class="panel-default" heading="Create New Parts" is-open="vm.openForm">
+      	<form name = "vm.partsForm" ng-submit="vm.submit(vm.partsForm)" novalidate>
+		    <div class="form-group" ng-class="{ 'has-error': vm.partsForm.word.$invalid && !vm.partsForm.word.$pristine}">
+			  <label for="word">Part Name:</label>
+			  <input type="text" id ="word" name="word" class="form-control" ng-model="vm.part.name" ng-maxlength="20" ng-pattern="/^[a-zA-Z ]*$/" required />
+			  <div class="help-block" ng-messages="vm.partsForm.word.$error" ng-if="vm.partsForm.word.$dirty">
+			  	<div ng-message="required">This field is required</div>
+		        <div ng-message="maxlength">Input must not exceed 25 characters</div>
+		        <div ng-message="pattern">Only aphabets are allowed</div>
+			  </div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': vm.partsForm.desc.$invalid && !vm.partsForm.desc.$pristine}">
+			  <label for="desc">Description:</label>
+			  <textarea id ="desc" name="desc" class="form-control" ng-model="vm.part.description" required> </textarea>
+			  <div class="help-block" ng-messages="vm.partsForm.desc.$error" ng-if="vm.partsForm.desc.$dirty">
+			  	<div ng-message="required">This field is required</div>
+			  </div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': vm.partsForm.country.$invalid && !vm.partsForm.country.$pristine}">
+			  <label for="country">Country:</label>
+			  <select id="country" class="form-control" ng-model="vm.part.country" ng-options="x for x in vm.countries" name="country" required>
+			  	<option value="">select</option>
+			  </select>
+			  <div class="help-block" ng-messages="vm.partsForm.country.$error" ng-if="vm.partsForm.country.$dirty">
+			  	<div ng-message="required">This field is required</div>
+			  </div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': vm.partsForm.email.$invalid && !vm.partsForm.email.$pristine}">
+			  <label for="email">Email:</label>
+			  <input type="email" id ="email" name="email" class="form-control" ng-model="vm.part.email" required />
+			  <div class="help-block" ng-messages="vm.partsForm.email.$error" ng-if="vm.partsForm.email.$dirty">
+			  	<div ng-message="required">This field is required</div>
+			  	<div ng-message="email">Not a proper mail ID</div>
+			  </div>
+			</div>
+			<button type="submit" class="btn btn-primary translate-btn" ng-disabled="vm.partsForm.$invalid"> Submit </button>
+		</form>
+    </div>
+
+	<div uib-accordion-group class="panel-default" heading="Edit Parts" is-open="false">
+		<div ng-if="vm.parts.length > 0">
+	      	<select ng-model="vm.selectedPart" class="form-control" ng-options="x.id as x.name for x in vm.parts" ></select>
+	      	<br>
+	        <button class="btn btn-primary" ng-click="vm.editPart(vm.selectedPart)"> Edit </button>
+	    </div>
+	    <div ng-if="!(vm.parts.length > 0)">
+	    	<p> No Parts To Edit</p>
+	    </div>
+    </div>
+
+	<div uib-accordion-group class="panel-default" heading="Delete Parts" is-open="false">
+      	<div  ng-if="vm.parts.length > 0">
+	      	<select ng-model="vm.selectedPart" class="form-control" ng-options="x.id as x.name for x in vm.parts" ></select>
+	      	<br>
+	        <button class="btn btn-primary" ng-click="vm.deletePart(vm.selectedPart)"> Delete </button>
+	    </div>
+        <div ng-if="!(vm.parts.length > 0)">
+	    	<p> No Parts To Delete</p>
+	    </div>
+    </div>
+</uib-accordion>
+
+<script type="text/ng-template" id="group-template.html">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="color:#fa39c3">
+        <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+          <span uib-accordion-header>
+            {{heading}}
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse" uib-collapse="!isOpen">
+      <div class="panel-body" style="text-align: right" ng-transclude></div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-body" id="modal-body">
+            Success !!
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$close()">OK</button>
+    </div>
+</script>

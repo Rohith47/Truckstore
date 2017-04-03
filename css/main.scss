@@ -1,0 +1,71 @@
+/**
+* Module : Main Css
+*/
+
+$bgDefault      : #0769b6;
+$bgHighlight    : #939798;
+$colDefault     : #d8d0d0;
+$colHighlight   : #fbfbfb;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  background-image: none;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }
+    }
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }
+        }
+      }
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+
+.container{
+  .form-group{
+    .translate-btn{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  .footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    background:#999;
+  }
+  .product-list li{
+    list-style:none;
+    padding:10px;
+    border-bottom:1px solid #000;
+    background-color:#eee
+  }
+}

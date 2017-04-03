@@ -1,0 +1,71 @@
+/**
+* Module : Main Css
+*/
+.navbar-default {
+  background-color: #0769b6;
+  border-color: #939798;
+  background-image: none;
+}
+.navbar-default .navbar-brand {
+  color: #d8d0d0;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #fbfbfb;
+}
+.navbar-default .navbar-text {
+  color: #d8d0d0;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #d8d0d0;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #fbfbfb;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #fbfbfb;
+  background-color: #939798;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #fbfbfb;
+  background-color: #939798;
+}
+.navbar-default .navbar-toggle {
+  border-color: #939798;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #939798;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #d8d0d0;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #d8d0d0;
+}
+.navbar-default .navbar-link {
+  color: #d8d0d0;
+}
+.navbar-default .navbar-link:hover {
+  color: #fbfbfb;
+}
+
+.container .form-group .translate-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container .footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+  background: #999;
+}
+.container .product-list li {
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid #000;
+  background-color: #eee;
+}
+
+/*# sourceMappingURL=main.css.map */
